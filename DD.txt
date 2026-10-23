@@ -1,0 +1,54 @@
+this is regarding this project ..what is this and why is this i dont know 
+
+
+project detailed description
+==============================
+
+Project: Maven
+Language: Java
+Spring Boot: Current stable
+Group: com.enterprise
+Artifact: order-service
+Name: order-service
+Packaging: Jar
+Java: 21
+
+Add these dependencies:
+=========================
+Spring Web -for make rest api and web applications, allow us to provide endpoints 
+Spring Data JPA - to make db connection easier , removes the boilerplate code
+MySQL Driver - to connect with the mqsql db
+Validation- to validate the incoming request , different from the business validation
+Spring Boot Actuator- this is for the monitoring of our project 
+Lombok- for the getter setter args constructor annotation to remove the boiler plate cofe for this.
+
+
+Lombok generates the boilerplate during compilation.
+
+Common Lombok annotations
+
+@Getter-	Getters
+@Setter-	Setters
+@ToString-	toString()
+@EqualsAndHashCode-	equals() and hashCode()
+@NoArgsConstructor-	No-argument constructor
+@AllArgsConstructor-	Constructor with all fields
+@RequiredArgsConstructor-	Constructor for required fields (which is marked the final or not null generally)
+@Data-	Getter + Setter + ToString + Equals/HashCode + required constructor
+@Builder-	Builder pattern(prevent telescopic constructor hell)
+@Slf4j-	Creates a logger
+
+## @requiredArgsConstructor - this basicall generates a constructor which have only required argument now for lombok required arguments are final and @NotNull so now 
+
+example -
+----------
+@Service
+public class OrderService {
+
+    private final OrderRepository orderRepository;
+
+    public OrderService(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
+    }
+}
+
